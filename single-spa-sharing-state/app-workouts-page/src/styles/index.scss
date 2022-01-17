@@ -1,0 +1,51 @@
+#single-spa-application\:workouts-page {
+    order: 2;
+}
+
+.workouts {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px dashed rgb(197, 142, 202);
+    margin: 1rem;
+    padding: 1rem;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+         h3 {
+            font-size: 16px;
+            color: #585858;
+            margin: 0 0 1rem 0;
+
+            pre {
+                display: inline-block;
+            }
+         }
+    }
+
+    .dev-description {
+        background-color: #c2d3e9;
+        padding: 1rem;
+        // margin: 1rem;
+        font-size: 18px;
+        color:#3d4958;
+        text-align: center;
+    
+        h4 {
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            margin: 0 0 0.5rem 0;
+            border-bottom: 1px solid #3d4958;
+        }
+        
+        > div {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

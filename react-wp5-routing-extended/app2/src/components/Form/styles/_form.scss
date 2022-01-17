@@ -1,0 +1,30 @@
+.wrapper {
+    margin: 1rem;
+
+    .module, .styleLabel {
+        font-size: 1rem;
+        font-family: 'Segoe UI';
+        color: #9494a7;
+        font-weight: 200;
+        margin: 5px;
+    }
+
+
+}
+
+.form {
+    
+    padding: 1rem;
+    background-color: #ebf3f9;
+    box-shadow: 2px 2px 4px #d7d7d7;
+    border-radius: 5px;
+    font-family: 'segoe ui';
+
+    h2 {
+        color: #596b87;
+    }
+
+    input, button {
+        margin: 10px;
+    }
+}

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app1: 
+    container_name: ext-routing-app1
+    build: app1/
+    ports:
+      - 3001:3001
+    image: react-mfe/ext-routing/app1
+    command: npm run serve
+
+  app2:
+    container_name: ext-routing-app2
+    build: app2/
+    ports: 
+    - 3002:3002
+    image: react-mfe/ext-routing/app2
+    command: npm run serve
+
+  root: 
+    depends_on:
+      - app1
+      - app2
+    container_name: ext-routing-root-app
+    build: root/
+    ports:
+      - 3000:3000
+    image: react-mfe/ext-routing/root
+    command: npm run serve

@@ -1,0 +1,67 @@
+#single-spa-application\:dashboard-page {
+    order: 2;
+}
+
+.page-dashboard {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px dashed rgb(142, 142, 202);
+    margin: 1rem;
+    padding: 1rem;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+         h3 {
+            font-size: 16px;
+            color: #585858;
+            margin: 0 0 1rem 0;
+
+            pre {
+                display: inline-block;
+            }
+         }
+    }
+}
+
+.buttons-row {
+    margin: 0 10px;
+
+    button {
+        margin: 10px;
+        padding: 5px 10px;
+        background-color: rgb(125, 165, 211);
+        color:rgb(223, 233, 233);
+        border: 1px solid grey;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+}
+
+.dev-description {
+    background-color: #c2d3e9;
+    padding: 1rem;
+    // margin: 1rem;
+    font-size: 18px;
+    color:#3d4958;
+    text-align: center;
+
+    h4 {
+        font-weight: 600;
+        padding-bottom: 0.5rem;
+        margin: 0 0 0.5rem 0;
+        border-bottom: 1px solid #3d4958;
+    }
+    
+    > div {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.component {
+    border: 1px solid rgb(142, 142, 202);
+    margin: 1rem 0;
+    padding: 1rem;
+}

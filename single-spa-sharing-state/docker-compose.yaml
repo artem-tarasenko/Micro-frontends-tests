@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  app-utils: 
+    container_name: single-spa-utils
+    build: app-utils/shared-data/
+    ports:
+      - 9030:9030
+    image: sspa-mfe/app-utils
+    command: npm start
+
+  react-st: 
+    container_name: single-spa-react
+    build: react-standalone/
+    ports:
+      - 9031:9031
+    image: sspa-mfe/react-standalone
+    command: npm run serve
+
+  workouts-page:
+    depends_on:
+      - app-utils
+    container_name: single-spa-workouts
+    build: app-workouts-page/
+    ports: 
+    - 9013:9013
+    image: sspa-mfe/workouts
+    command: npm start
+
+  nav:
+    depends_on:
+      - app-utils
+    container_name: single-spa-nav
+    build: app-nav/
+    ports: 
+    - 9010:9010
+    image: sspa-mfe/nav
+    command: npm start
+
+  mealplan-page:
+    depends_on:
+      - app-utils
+    container_name: single-spa-mealplan
+    build: app-mealplan-page/
+    ports: 
+    - 9012:9012
+    image: sspa-mfe/mealplan
+    command: npm start
+
+  dashboard-page:
+    depends_on:
+      - app-utils
+    container_name: single-spa-dashboard
+    build: app-dashboard-page/
+    ports: 
+    - 9011:9011
+    image: sspa-mfe/dashboard
+    command: npm start
+
+  settings-vue:
+    depends_on:
+      - app-utils
+    container_name: single-spa-vue
+    build: app-settings-vue/
+    ports: 
+    - 9014:9014
+    image: sspa-mfe/vue
+    command: npm run serve
+
+  root: 
+    depends_on:
+      - app-utils
+    container_name: single-spa-root
+    build: app-root/
+    ports:
+      - 9000:9000
+    image: sspa-mfe/app-root
+    command: npm start

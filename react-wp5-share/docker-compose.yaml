@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  source: 
+    container_name: share-source-app
+    build: app-source/
+    ports:
+      - 3001:3001
+    image: react-mfe/share/app-source
+    command: npm run serve
+
+  consumer:
+    depends_on:
+      - source
+    container_name: share-consumer-app
+    build: app-consumer/
+    ports: 
+    - 3002:3002
+    image: react-mfe/share/app-consumer
+    command: npm run serve
+
+  root: 
+    depends_on:
+      - consumer
+      - source
+    container_name: share-root-app
+    build: root/
+    ports:
+      - 3000:3000
+    image: react-mfe/share/app-root
+    command: npm run serve

@@ -1,0 +1,35 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.container {
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    background-color: #c1d1a4;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    box-shadow: 3px 2px 6px #e1e1e1;
+    color: #505050;
+    max-width: 400px;
+
+    &.component {
+        > div {
+            display: flex;
+            > * {
+                margin: 0.5rem;
+            }
+        }
+    }
+
+    pre {
+        color: #8f8f8f;
+        font-family: monospace;
+        font-size: 16px;
+    }
+}
+
+.remote {
+    border: 2px dashed rgb(109, 109, 247);
+    padding: 1rem;
+}

@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  workouts: 
+    container_name: routing-workouts
+    build: workouts/
+    ports:
+      - 4002:4002
+    image: react-mfe/routing/workouts
+    command: npm run serve
+
+  userinfo:
+    container_name: routing-userinfo
+    build: userinfo/
+    ports: 
+    - 4003:4003
+    image: react-mfe/routing/userinfo
+    command: npm run serve
+
+  mealPlan:
+    container_name: routing-mealplans
+    build: mealplans/
+    ports: 
+    - 4001:4001
+    image: react-mfe/routing/mealplans
+    command: npm run serve
+
+  lib:
+    container_name: routing-lib
+    build: lib/
+    ports: 
+    - 4100:4100
+    image: react-mfe/routing/lib
+    command: npm run serve
+
+  root: 
+    depends_on:
+      - lib
+      - workouts
+      - userinfo
+      - mealPlan
+    container_name: routing-root-app
+    build: root/
+    ports:
+      - 4000:4000
+    image: react-mfe/routing/root
+    command: npm run serve

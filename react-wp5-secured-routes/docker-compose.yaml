@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  reports: 
+    container_name: secured-routes-reports-app
+    build: reports/
+    ports:
+      - 3002:3002
+    image: react-mfe/secured-routes/reports
+    command: npm run serve
+
+  customers:
+    container_name: secured-routes-customers-app
+    build: customers/
+    ports: 
+    - 3001:3001
+    image: react-mfe/secured-routes/customers
+    command: npm run serve
+
+  root: 
+    depends_on:
+      - reports
+      - customers
+    container_name: secured-routes-root-app
+    build: root/
+    ports:
+      - 3000:3000
+    image: react-mfe/secured-routes/root
+    command: npm run serve
